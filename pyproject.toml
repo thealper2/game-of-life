@@ -1,0 +1,45 @@
+[project]
+name = "game-of-life"
+version = "0.1.0"
+description = "Conway's Game of Life implemented in Python using the curses library."
+authors = [
+    { name = "Alper Karaca", email = "" }
+]
+readme = "README.md"
+requires-python = ">=3.7"
+license = { file = "LICENSE" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux"
+]
+
+[project.urls]
+Homepage = "https://github.com/thealper2/game-of-life"
+Repository = "https://github.com/thealper2/game-of-life.git"
+Issues = "https://github.com/thealper2/game-of-life/issues"
+
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.black]
+line-length = 88
+target-version = ['py37']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
